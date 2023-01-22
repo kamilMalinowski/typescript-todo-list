@@ -1,0 +1,177 @@
+/* the simplest styles as possible */
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  background: linear-gradient(45deg, #f2f8ff, #f7ffff);
+}
+
+.todo {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  background-color: #f7f7f7;
+  margin: 0 auto;
+  min-height: 500px;
+  border-radius: 10px;
+  font-size: 24px;
+  box-shadow: 0 4px 10px rgba(47, 117, 192, 0.2);
+}
+
+.todo__box {
+  position: relative;
+}
+
+.todo__label {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bold;
+  color: #808080;
+  transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+}
+
+.todo__input {
+  border-radius: 10px 10px 0 0;
+  outline: none;
+  padding: 20px;
+  border: none;
+  display: block;
+  font-size: inherit;
+  font-style: inherit;
+  width: 100%;
+}
+
+.todo__input:focus + .todo__label {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.todo__btn {
+  border-radius: 2px;
+  margin: 10px;
+  padding: 20px;
+  display: block;
+  width: calc(100% - 20px);
+  cursor: pointer;
+  font-weight: bold;
+  background-color: #2f74c0;
+  color: #f7f7f7;
+  text-transform: uppercase;
+  border: none;
+  font-size: inherit;
+  font-style: inherit;
+  transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.todo__btn:hover {
+  background-color: #428fe1;
+}
+
+.todo__btn:active {
+  transform: scale(0.98);
+}
+
+.todo__list {
+  border-top: 1px solid rgba(47, 117, 192, 0.2);
+  color: #808080;
+  font-size: 16px;
+  border-radius: 0 0 10px 10px;
+  margin-bottom: 40px;
+}
+
+.todo__task {
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  list-style: none;
+  border-bottom: 1px solid rgba(47, 117, 192, 0.2);
+  background-color: #f7f7f7;
+}
+
+.todo__task-name {
+  padding: 10px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  order: 0;
+}
+
+.todo__task-box {
+  border-left: 1px solid rgba(192, 47, 185, 0.5);
+  min-height: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  order: 1;
+  margin-left: auto;
+}
+
+.todo__task-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.todo__task-checkbox:hover {
+  transform: scale(1.2);
+}
+
+.todo__task-delete {
+  background-color: transparent;
+  cursor: pointer;
+  display: block;
+  padding: 10px;
+  order: 2;
+  font-size: 40px;
+  border: none;
+  border-left: 1px solid rgba(188, 188, 188, 0.4);
+  font-size: inherit;
+  font-style: inherit;
+  transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.todo__task-delete:hover {
+  background-color: rgba(245, 211, 217, 0.8);
+}
+
+.checked {
+  animation: fly 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.done {
+  background-color: #effff1;
+  border-bottom: 1px solid rgba(47, 192, 88, 0.2);
+}
+
+@keyframes fly {
+  0% {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(47, 117, 192, 0.5);
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(-120%) rotate(-3deg) skewX(8deg);
+    box-shadow: 0 2px 20px rgba(47, 117, 192, 0.3);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100%) rotate(-2deg) skewX(12deg) scale(0.9);
+    box-shadow: 0 2px 30px rgba(47, 117, 192, 0.1);
+  }
+}
