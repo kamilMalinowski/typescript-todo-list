@@ -1,14 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TypeScript | ToDo list</title>
-    <link rel="icon" href="https://www.kamil--m.com/favicon.svg">
+    <link rel="icon" href="https://www.kamil--m.com/favicon.svg" />
+    <link rel="stylesheet" href="dist/style.css">
     <script src="dist/app.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <!-- to do list -->
-</body>
+    <form class="todo">
+      <div class="todo__box">
+          <input type="text" class="todo__input" name="todoInp" id="todoInp" autocomplete="off"/>
+          <label for="todoInp" class="todo__label">TS todo list</label>
+      </div>
+      <button class="todo__btn">Add Task</button>
+      <ul class="todo__list">
+        <li class="todo__task">
+          <button class="todo__task-delete">🗑️</button>
+          <div class="todo__task-box">
+            <input
+              type="checkbox"
+              name="task-1"
+              id="task-1"
+              class="todo__task-checkbox"
+            />
+          </div>
+          <p class="todo__task-name">+ Learn TypeScript</p>
+        </li>
+      </ul>
+    </form>
+  </body>
 </html>
